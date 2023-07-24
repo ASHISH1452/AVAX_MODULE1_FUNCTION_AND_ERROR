@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.0;
+
+contract SmartContract {
+    uint256 public value;
+
+    // require statement
+    function setValue(uint256 _value) public {
+        require(_value > 0, "Value must be greater than zero");
+
+        // set the value
+        value = _value;
+    }
+
+    function setValueWithRevert(uint256 _value) public {
+        require(_value != 0, "Value cannot be zero");
+
+        // set the value
+        value = _value;
+    }
+}
